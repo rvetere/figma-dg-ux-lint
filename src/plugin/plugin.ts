@@ -25,4 +25,20 @@ async function bootstrap() {
   NetworkMessages.HELLO_UI.send({ text: "Hey there, UI!" });
 }
 
+figma.on("documentchange", (_event) => {
+  // When a change happens in the document
+  // send a message to the plugin to look for changes.'
+  // figma.ui.postMessage({
+  //   type: "change"
+  // });
+});
+
+// figma.on("selectionchange", () => {
+//   console.log("Selection changed");
+//   const { selection } = figma.currentPage;
+//   if (selection.length) {
+//     NetworkMessages.SELECTION_CHANGE.send({ selection: selection[0] });
+//   }
+// });
+
 bootstrap();

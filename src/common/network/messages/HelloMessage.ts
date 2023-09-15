@@ -15,5 +15,9 @@ export class HelloMessage extends Networker.MessageType<Payload> {
 
   handle(payload: Payload, from: Networker.Side) {
     console.log(`${from.getName()} said "${payload.text}"`);
+    if (typeof window !== "undefined") {
+      // @ts-ignore
+      console.log(typeof window.dispatch);
+    }
   }
 }
